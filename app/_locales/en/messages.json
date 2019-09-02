@@ -1,0 +1,10 @@
+{
+  "appname": {
+    "message": "weather-display",
+    "description": "This is the name of this application."
+  },
+  "appdescription": {
+    "message": "weather",
+    "description": "This is the description of the application."
+  }
+}
