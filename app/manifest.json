@@ -10,7 +10,7 @@
     "default_locale": "en",
     "background": {
         "scripts": [
-            "weather/weather.js"
+            "scripts/background.js"
         ]
     },
     "permissions": [],
