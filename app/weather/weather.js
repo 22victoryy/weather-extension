@@ -1,6 +1,9 @@
 window.addEventListener('load', function() {
   var long;
   var lat;
+  var temperatureDescription = document.querySelector(".Temperature-Description");
+  var temperatureDegree = document.querySelector(".Degree");
+  var location = document.querySelector(".Location-Timezone")
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -17,10 +20,23 @@ window.addEventListener('load', function() {
         })
         .then(data => {
           console.log(data)
-          // const {} = data.list
+          const {temperature, summary} = data.currently;
+          // Set DOM elements from API
+          // console.log(temperature)
+          // console.log(summary)
+          temperatureDegree.textContent = temperature;
+          temperatureDescription.textContent = summary;
+          location.textContent = data.timezone;
+
+
         })
     });
+
+
   } else {
     console.log("Please download Live Service Plugin for VScode.")
   }
 });
+
+
+
