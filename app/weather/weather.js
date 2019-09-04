@@ -1,3 +1,18 @@
+// By victorchanyoung.cho@mail.utoronto.ca
+// September 3rd, 2019
+
+var ToCelsius = function (temp) {
+  celsius = (temp - 32) * (5 / 9);
+  return Math.floor(celsius);
+};
+
+var setIcons = function(icon, iconID) {
+  const skycons = new Skycons({color: "white"});
+  const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+  skycons.play();
+  return skycons.set(iconID, Skycons[currentIcon]);
+};
+
 window.addEventListener('load', function() {
   var long;
   var lat;
@@ -38,6 +53,7 @@ window.addEventListener('load', function() {
               temperatureDegree.textContent = ToCelsius(temperature);
             } else {
               temperaturespan.textContent = "F";
+              temperatureDegree.textContent = temperature;
             }
 
           });
@@ -47,16 +63,7 @@ window.addEventListener('load', function() {
     console.log("Please download Live Service Plugin for VScode.")
   }
 
-  var setIcons = function(icon, iconID) {
-    const skycons = new Skycons({color: "white"});
-    const currentIcon = icon.replace(/-/g, "_").toUpperCase();
-    skycons.play();
-    return skycons.set(iconID, Skycons[currentIcon]);
-  };
+
 });
 
-var ToCelsius = function (temp) {
-  celsius = (temp - 32) * (5 / 9);
-  return Math.floor(celsius);
-};
 
