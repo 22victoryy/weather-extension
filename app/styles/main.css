@@ -5,8 +5,8 @@
 }
 
 body {
-  width: 400px;
-  height:400px;
+  width: 411px;
+  height:510px;
   /* height: 100vh; */
   display: flex;
   justify-content: center;
@@ -43,5 +43,15 @@ body {
 }
 
 .date-section {
-  font-size: 25px;
+  font-size: 15px;
+}
+
+.date {
+  font-size : 20px;
+  font-weight: bold;
+}
+
+.temperature-description {
+  justify-content: center;
+  margin: 30px;
 }
