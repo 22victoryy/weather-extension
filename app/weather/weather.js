@@ -3,7 +3,7 @@
 
 var options = {
   enableHighAccuracy: true,
-  timeout: 5000,
+  timeout: 100000,
   maximumAge: 0
 };
 
@@ -95,10 +95,8 @@ window.addEventListener('load', function() {
         })
     });
   } else {
-    console.log("Please download Live Service Plugin for VScode.")
+    console.log("Please install live service to simulate environment.")
   }
-
-
 });
 
 
