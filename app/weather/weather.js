@@ -3,7 +3,9 @@ window.addEventListener('load', function() {
   var lat;
   var temperatureDescription = document.querySelector(".Temperature-Description");
   var temperatureDegree = document.querySelector(".Degree");
-  var location = document.querySelector(".Location-Timezone")
+  var location = document.querySelector(".Location-Timezone");
+  var temperatureSection = document.querySelector(".Temperature-Section");
+  const temperaturespan = document.querySelector(".Temperature-Section span");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -20,23 +22,41 @@ window.addEventListener('load', function() {
         })
         .then(data => {
           console.log(data)
-          const {temperature, summary} = data.currently;
+          const {temperature, summary, icon} = data.currently;
           // Set DOM elements from API
           // console.log(temperature)
           // console.log(summary)
           temperatureDegree.textContent = temperature;
           temperatureDescription.textContent = summary;
           location.textContent = data.timezone;
+          // set icon
+          setIcons(icon, document.querySelector(".icon"));
+          //change to celsius, seperate to func
+          temperatureSection.addEventListener("click", () => {
+            if (temperaturespan.textContent === "F") {
+              temperaturespan.textContent = "C";
+              temperatureDegree.textContent = ToCelsius(temperature);
+            } else {
+              temperaturespan.textContent = "F";
+            }
 
-
+          });
         })
     });
-
-
   } else {
     console.log("Please download Live Service Plugin for VScode.")
   }
+
+  var setIcons = function(icon, iconID) {
+    const skycons = new Skycons({color: "white"});
+    const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
+  };
 });
 
-
+var ToCelsius = function (temp) {
+  celsius = (temp - 32) * (5 / 9);
+  return Math.floor(celsius);
+};
 
