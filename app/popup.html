@@ -7,21 +7,24 @@
     <title>Weather</Title>
   </head>
   <body>
-    <div class = "Date-Section">
+   <video autoplay loop id="myVideo">
+      <source src="./videos/Puddle - 2291.mp4" type="video/mp4">
+   </video>
+   <div class = "Date-Section">
       <p>Today's date is...</p>
       <div class="Date">Sampledate</div>
-    </div>
-    <div class="Location">
+   </div>
+   <div class="Location">
       <h1 class="Location-Timezone">Timezone</h1>
       <canvas class="icon" width="128" height="128"></canvas>
     </div>
-    <div class="Temperature-Section">
-      <div class="Degree-Section">
-        <h2 class="Degree">34</h2>
-        <span>F</span>
-      </div>
-      <div class="Temperature-Description">Temperature Description</div>
+  <div class="Temperature-Section">
+    <div class="Degree-Section">
+      <h2 class="Degree">34</h2>
+      <span>F</span>
     </div>
+    <div class="Temperature-Description">Temperature Description</div>
+  </div>
     <script src="./weather/weather.js"></script>
     <script src="./skycons.js"></script>
   </body>
