@@ -18,6 +18,11 @@ body {
 
   color: white;
 }
+.date-section {
+  font-size: 15px;
+  position: relative;
+  top: -5px;
+}
 
 .location {
   height: 30vh;
@@ -25,12 +30,16 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 
 .degree-section{
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  top: 5px;
+
 }
 
 .degree-section span{
@@ -42,9 +51,6 @@ body {
   font-size:40px;
 }
 
-.date-section {
-  font-size: 15px;
-}
 
 .date {
   font-size : 20px;
@@ -54,4 +60,20 @@ body {
 .temperature-description {
   justify-content: center;
   margin: 30px;
+  position: relative;
+  top: 20px;
+
 }
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+
+
+/* Style the button used to pause/play the video */
