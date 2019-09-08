@@ -54,7 +54,7 @@ window.addEventListener('load', function() {
   if (navigator.geolocation) {
 
     // Obtain geolocation
-    var geoloc = navigator.geolocation.getCurrentPosition(position => {
+    var geoloc = function(position) {
       var long = position.coords.longitude;
       var lat = position.coords.latitude;
       // const api = `http://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${long}&cnt=1&appid=9127a894a9e2c98639ed5ca00991a2c7`;
@@ -70,7 +70,7 @@ window.addEventListener('load', function() {
         const {temperature, summary, icon} = data.currently;
 
         // Set DOM elements from API
-        if (summary.includes("Cloudy")) {
+        if (summary.includes("Cloudy") || summary.includes("Overcast")) {
           document.getElementById('myVideo').setAttribute("src", "../videos/cloud.mp4");
           document.getElementById('myVideo').load();
           document.getElementById('myVideo').play();
@@ -109,8 +109,8 @@ window.addEventListener('load', function() {
           }
         });
       });
-      navigator.geolocation.getCurrentPosition(geoloc, error, options);
-    });
+    }
+    navigator.geolocation.getCurrentPosition(geoloc, error, options);
   } else {
     console.log("Please install live service to simulate environment.")
   };
