@@ -6,4 +6,4 @@ chrome.runtime.onInstalled.addListener(details => {
 
 chrome.browserAction.setBadgeText({text: 'clime'});
 
-console.log('\'Allo \'Allo! Event Page for Browser Action');
+console.log('Browser Action enabled...');
