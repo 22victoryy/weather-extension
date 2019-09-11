@@ -75,7 +75,7 @@ window.addEventListener('load', function() {
           document.getElementById('myVideo').load();
           document.getElementById('myVideo').play();
         }
-        else if (summary.includes("Drizzle")) {
+        else if (summary.includes("Drizzle") || summary.includes("Rain")) {
           document.getElementById('myVideo').setAttribute("src", "../videos/rain.mp4");
           document.getElementById('myVideo').load();
           document.getElementById('myVideo').play();
