@@ -2,7 +2,7 @@
 
 var options = {
   enableHighAccuracy: true,
-  timeout: 100000,
+  timeout: 80000,
   maximumAge: 0
 };
 
